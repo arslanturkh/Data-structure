@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0067)http://www.cs.binghamton.edu/~iwobi/CS240C/Assignments/assign4.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    
+    <title>Assignment 6</title>
+  </head>
+  <body>
+    <div align="center"><big><b>CS240C - Data Structures</b><b><br>
+        </b><b>Spring 2016</b><b><br>
+        </b><b>Assignment 4<br>
+        </b></big>
+      <hr size="2" width="100%">
+      <div align="left">In this assignment you will:<br>
+        <ul>
+          <li>complete the stack class that you started work on in lab</li>
+          <li>write a queue class that implements the queue interface<br>
+          </li>
+          <li>write a program that uses your stack and queue classes to
+            evaluate postfix expressions</li>
+        </ul>
+        Part 1 - complete the Stack class that you started in lab.&nbsp;
+        <br>
+        <br>
+        Part 2 - write a Queue class.&nbsp; Define ElementType as
+        string. You may use a static array, a dynamic array or a linked
+        list as the data structure.&nbsp; If you use a dynamically
+        allocated array or a linked list you will need to provide a
+        destructor.&nbsp; You do not need to provide an assignment
+        operator or a copy constructor.&nbsp; If you use an array your
+        queue must be capable of holding up to capacity number of items
+        and the push and pop operations must be O(1).&nbsp; This means
+        you will have to treat the array as if it were circular (as
+        discussed in class on Thursday).&nbsp; <br>
+        <br>
+        Part 3 - write a well decomposed program that:<br>
+        <ul>
+          <li>for each line of an input file<br>
+          </li>
+        </ul>
+        <ul>
+          <ul>
+            <li>Reads a postfix expression from an input file (the
+              program user must be able to enter the name of the file to
+              be read from) and stores the tokens that make up the
+              expression in a queue of tokens (strings).&nbsp; <br>
+            </li>
+          </ul>
+          <ul>
+            <li>Evaluates the postfix expression.&nbsp; The function
+              that does the evaluation (algorithm is given below and in
+              the Unit 4 slides) will make use of a stack of operands
+              (ints).&nbsp;&nbsp;</li>
+            <li>Writes to a text file the postfix expression and the
+              result of evaluating it.<br>
+            </li>
+          </ul>
+        </ul>
+        You may find the atoi() function from &lt;cstdlib&gt; useful.<br>
+        <br>
+        <b>Algorithm to evaluate a postfix expression</b><br>
+        <br>
+        create an empty stack<br>
+        while there are more tokens in the postfix expression<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; get the next token<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if the token is an operand
+        <br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; push it onto the stack<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if the token is an
+        operator<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; get and pop the top two operands from the
+        stack<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; apply the operator to these two operands<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; push the result onto the stack<br>
+        &nbsp;the top of the stack is the result of evaluating the
+        postfix expression<br>
+        <br>
+        The text file that contains the postfix expressions will have
+        the following format.&nbsp; Each line will contain one postfix
+        expression.&nbsp;&nbsp; All operands with be integers and the
+        only operators will be +, * and -.&nbsp;&nbsp; Tokens (operators
+        and operands) will be separated by at least one blank and the
+        character # will mark the end of a postfix expression.&nbsp; An
+        example of an input file follows:<br>
+        <br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 23 4 *
+        19 2 - + #<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 6 3
+        -&nbsp; #<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 36 #<br>
+        <br>
+        You can assume that the input file is formatted as described
+        above and that all infix expressions are legal. You can assume
+        that the last character on each line will be a #.&nbsp; <br>
+        <br>
+        The output file your program creates as a result of the reading
+        the input file shown above should look something like:<br>
+        <br>
+        The result of evaluating&nbsp; 23 4 * 19 2 - + &nbsp; is 109<br>
+        The result of evaluating 6 3 - is 3<br>
+        The result of evaluating 36 is 36 <br>
+        <p></p>
+        <br>
+        <p style="margin-bottom: 0.11in; widows: 2; orphans: 2"><font size="3">Submission to Blackboard is due by 10 pm on
+            Wednesday March 9. The .tar.gz file that you submit to
+            Blackboard must contain the 3 .cpp files, the 2 .h files,
+            the makefile and a text file that you used to test your
+            program.&nbsp; Your program will be run with that text file
+            and with one provided by the instructor.<br>
+          </font></p>
+        <p style="margin-bottom: 0.11in; widows: 2; orphans: 2;
+          page-break-before: auto; page-break-after: auto"> <font size="3">Hard copy submission is due at the beginning of
+            class on Thursday March 10. In addition to the code that you
+            wrote include the output file produced by executing your
+            program with the text file that you wrote to test your
+            program.<br>
+          </font></p>
+        <p><br>
+        </p>
+      </div>
+    </div>
+  
+
+</body></html>

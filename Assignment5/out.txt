@@ -1,0 +1,10 @@
+The postfix of 23 * 4 + ( 19 - 2 ) #
+23 4 * 19 2 - + which evaluates to 109
+The postfix of 6 - 3 #
+6 3 - which evaluates to 3
+The postfix of 36 #
+36 which evaluates to 36
+The postfix of 15 / 2 #
+15 2 / which evaluates to 7.5
+The postfix of 78 / 0 #
+78 0 which evaluates to 0
